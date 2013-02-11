@@ -1,6 +1,6 @@
 name             'ossim-agent'
-maintainer       'YOUR_COMPANY_NAME'
-maintainer_email 'YOUR_EMAIL'
+maintainer       'Abadasoft'
+maintainer_email 'figarciamartinez@gmail.com'
 license          'All rights reserved'
 description      'Installs/Configures ossim-agent'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))

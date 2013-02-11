@@ -1,9 +1,7 @@
 ossim-agent Cookbook
 ====================
-TODO: Enter the cookbook description here.
 
-e.g.
-This cookbook makes your favorite breakfast sandwhich.
+This cookbook install ossim-agent.
 
 Requirements
 ------------
@@ -11,7 +9,19 @@ TODO: List your cookbook requirements. Be sure to include any requirements this 
 
 e.g.
 #### packages
-- `toaster` - ossim-agent needs toaster to brown your bagel.
+- git
+- wget
+- python-tz
+- python-pyinotify
+- python-adodb
+- python-mysqldb
+- python-paramiko
+- python-pymssql
+- python-libpcap
+- python-geoip
+- python-nmap
+- python-ldap
+- `wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz`
 
 Attributes
 ----------
