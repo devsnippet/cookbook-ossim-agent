@@ -8,7 +8,7 @@
 #
 #
 # packages
-%w{ git wget python-geoip python-pyinotify python-tz python-nmap python-ldap python-libpcap }.each do |pkg|
+%w{ git wget python-geoip python-pyinotify python-tz python-nmap python-ldap python-libpcap python-adodb python-mysqldb python-paramiko python-pymssql }.each do |pkg|
     package pkg do
         action :install
     end
@@ -35,10 +35,31 @@ bash "download GeoLiteCity.dat" do
     EOH
 end
 
-
+#
 # ossim source code
-git "/tmp/tmp-siem" do
+#
+# git "#{node[:ossim][:tempdir]}" do
+git "/tmp/temp-siem" do
     repository "#{node[:ossim][:code_from]}"
     reference "#{node[:ossim][:release]}"
     action :sync
 end
+
+#
+# install 
+#
+bash "install ossim agent" do
+    user "root"
+    # cwd "#{node[:ossim][:tempdir]}"
+    cwd "/tmp/temp-siem/os-sim/agent"
+    code <<-EOH
+        set -x
+        python setup.py build
+        python setup.py install
+        set +x
+    EOH
+end
+
+#
+# Config 
+#
