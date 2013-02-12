@@ -15,7 +15,7 @@
 end
 
 # OssinAgent need "/usr/share/geoip/GeoLiteCity.dat"
-directory "/usr/share/geoip" do
+directory "#{node[:geolitecity][:path]}" do
     owner "root"
     group "root"
     mode 00755
@@ -26,8 +26,19 @@ bash "download GeoLiteCity.dat" do
     user "root"
     cwd "#{node[:geolitecity][:path]}"
     code <<-EOH
-        wget -c -t3 #{node[:geolitecity][:url]}
-        gunzip #{node[:geolitecity][:file]}.gz
+        if [[ ! -f #{node[:geolitecity][:path]}/GeoLiteCity.dat ]]
+        then
+            wget -c -t3 #{node[:geolitecity][:url]}
+            gunzip #{node[:geolitecity][:file]}.gz
+        fi
+
     EOH
 end
 
+
+# ossim source code
+git "/tmp/tmp-siem" do
+    repository "#{node[:ossim][:code_from]}"
+    reference "#{node[:ossim][:release]}"
+    action :sync
+end
