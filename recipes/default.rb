@@ -8,7 +8,7 @@
 #
 #
 # packages
-%{ git wget python-geoip python-pyinotify python-tz python-nmap python-ldap python-libpcap }.each do |pkg|
+%w{ git wget python-geoip python-pyinotify python-tz python-nmap python-ldap python-libpcap }.each do |pkg|
     package pkg do
         action :install
     end
@@ -24,10 +24,10 @@ end
 
 bash "download GeoLiteCity.dat" do
     user "root"
-    cwd default[:geolitecity][:path]
+    cwd "#{node[:geolitecity][:path]}"
     code <<-EOH
-        wget -c -t3 #{default[:geolitecity][:url]}
-        gunzip #{defaukt[:geolitecity][:file]}.gz
+        wget -c -t3 #{node[:geolitecity][:url]}
+        gunzip #{node[:geolitecity][:file]}.gz
     EOH
 end
 
