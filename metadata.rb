@@ -10,6 +10,6 @@ version          '0.1.0'
     supports os
 end
 
-%w{ apt yum }.each do |dep|
-    depends dep
-end
+# %w{ apt yum }.each do |dep|
+#    depends dep
+# end
