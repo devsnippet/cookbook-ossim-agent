@@ -19,7 +19,7 @@ end
 #
 # OssinAgent need "/usr/share/geoip/GeoLiteCity.dat"
 #
-if !File.exits?("#{node[:geolitecity][:path]}/GeoLiteCity.dat")
+if !File.exists?("#{node[:geolitecity][:path]}/GeoLiteCity.dat")
     directory "#{node[:geolitecity][:path]}" do
         owner "root"
         group "root"
