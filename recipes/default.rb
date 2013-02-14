@@ -54,12 +54,13 @@ end
 #
 bash "install ossim agent" do
     user "root"
-    # cwd "#{node[:ossim][:tempdir]}"
     cwd "/tmp/temp-siem/os-sim/agent"
     code <<-EOH
         set -x
         python setup.py build
         python setup.py install
+        # That two orders not install logrotate file and init script
+        cp ./etc/logrotate.d/ossim-agent /etc/logrotate.d/ossim-agent
         set +x
     EOH
 end
