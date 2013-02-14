@@ -43,7 +43,7 @@ end
 #
 # ossim source code
 #
-git "/tmp/temp-siem" do
+git "/usr/local/src" do
     repository "#{node[:ossim][:code_from]}"
     reference "#{node[:ossim][:release]}"
     action :sync
@@ -54,7 +54,7 @@ end
 #
 bash "install ossim agent" do
     user "root"
-    cwd "/tmp/temp-siem/os-sim/agent"
+    cwd "/usr/local/src/os-sim/agent"
     code <<-EOH
         set -x
         python setup.py build
