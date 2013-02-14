@@ -1,3 +1,7 @@
+#
+# http://dev.maxmind.com/geoip/geolite
+# free IP geolocation databases
+#
 default[:geolitecity][:url] = "http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
 default[:geolitecity][:path] = "/usr/share/geoip"
 default[:geolitecity][:file] = "GeoLiteCity.dat"
