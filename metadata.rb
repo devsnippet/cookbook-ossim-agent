@@ -9,7 +9,3 @@ version          '0.1.0'
 %w{ debian ubuntu centos suse fedora redhat }.each do |os|
     supports os
 end
-
-# %w{ apt yum }.each do |dep|
-#    depends dep
-# end
