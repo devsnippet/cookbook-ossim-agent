@@ -95,7 +95,7 @@ port=40002
 
 <% node[:ossim][:plugins].each do |plugin| -%>
 <% if plugin[1]["enable"] -%>
-# Don't change it, it's mangenment by chef
+# Don't change it, it's management by chef
 <%= plugin[0] %>=<%= plugin[1]["path"] %>
 <% end -%>
 <% end -%>
