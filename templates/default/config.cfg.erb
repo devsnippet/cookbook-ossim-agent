@@ -26,14 +26,14 @@ port = <%= node[:ossim][:frameworkd][:server_port] %>
 # general
 #
 [daemon]
-daemon = True
-pid = /var/run/ossim-agent.pid
+daemon = <%= node[:ossim][:daemon][:enable] %>
+pid = <%= node[:ossim][:daemon][:pid] %>
 
 
 [log]
-file = /var/log/ossim/agent.log
-error = /var/log/ossim/agent_error.log
-stats = /var/log/ossim/agent_stats.log
+file = <%= node[:ossim][:log][:file] %>
+error = <%= node[:ossim][:log][:error] %>
+stats = <%= node[:ossim][:log][:stats] %>
 
 # uncomment this line if you want to log to a remote syslog
 # remember you need to startup syslog with the -r option to enable 

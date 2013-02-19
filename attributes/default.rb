@@ -13,7 +13,7 @@ default[:ossim][:src][:code_from] = "git://git.assembla.com/os-sim.2.git"
 default[:ossim][:src][:release] = "release-4.1.3"
 
 #
-# server: 
+# server 
 #
 default[:ossim][:server][:ip] = "127.0.0.1"
 default[:ossim][:server][:port] = "40001"
@@ -24,6 +24,24 @@ default[:ossim][:server][:port] = "40001"
 default[:ossim][:control_framework] = "False"
 default[:ossim][:frameworkd][:server_ip] = "127.0.0.1"
 default[:ossim][:frameworkd][:server_port] = "40003"
+
+
+#
+# Daemon
+# 
+default[:ossim][:daemon][:enable] = "True"
+default[:ossim][:daemon][:pid] = "/var/run/ossim-agent.pid"
+
+
+#
+# log
+#
+default[:ossim][:log][:path] = "/var/log/ossim"
+default[:ossim][:log][:file] = "#{node[:ossim][:log][:path]}/agent.log"
+default[:ossim][:log][:error] = "#{node[:ossim][:log][:path]}/agent_error.log"
+default[:ossim][:log][:stats] = "#{node[:ossim][:log][:path]}/agent_stats.log"
+
+
 
 #
 # Plugins
