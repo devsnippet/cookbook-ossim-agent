@@ -14,8 +14,4 @@ template "/etc/ossim/agent/config.cfg" do
     mode 0440
     owner "root"
     group "root"
-    variables({
-        :server => node[:ossim][:server],
-        :server_port => node[:ossim][:port]
-    })
 end

@@ -44,8 +44,8 @@ end
 # ossim source code
 #
 git "/usr/local/src" do
-    repository "#{node[:ossim][:code_from]}"
-    reference "#{node[:ossim][:release]}"
+    repository "#{node[:ossim][:src][:code_from]}"
+    reference "#{node[:ossim][:src][:release]}"
     action :sync
 end
 
