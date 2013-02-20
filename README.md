@@ -199,8 +199,8 @@ License and Authors
 -------------------
 Authors: Fernando Israel García Martínez ( figarciamartinez@gmail.com )
 
-License: Este obra está bajo una [Licencia Creative Commons Atribución 3.0 España][http://creativecommons.org/licenses/by/3.0/es/deed.es].
+License: Este obra está bajo una [Licencia Creative Commons Atribución 3.0 España](http://creativecommons.org/licenses/by/3.0/es/deed.es).
 
-<img alt="Licencia Creative Commons" 
-    style="border-width:0" 
-    src="http://i.creativecommons.org/l/by/3.0/es/80x15.png" />
+!["Licencia Creative Commons"][1]
+
+[1]: http://i.creativecommons.org/l/by/3.0/es/80x15.png "Licencia Creative Commons"
