@@ -8,7 +8,7 @@ Requirements
 
 #### Platform
 
-We tested it in ubuntu 12.04 server and debian 7.0.
+It has been tested on ubuntu 12.04 server and debian 7.0.
 
 #### Packages
 
@@ -62,7 +62,7 @@ _*ossim-agent config.cfg*_:
 
 #### Plugins
 
-Here it is the complete list of plugins that this _cookbook_ manages.
+Here is the complete list of plugins that this _cookbook_ manages.
 
 * `node[:ossim][:plugins]["apache"]`
 * `node[:ossim][:plugins]["arpwatch"]`
@@ -123,7 +123,7 @@ Here it is the complete list of plugins that this _cookbook_ manages.
 * `node[:ossim][:plugins]["whois"]`
 * `node[:ossim][:plugins]["malwaredomainlist"]`
 
-All of them are deactivated by default, you must activate those you want to use.
+All the plugins are disabled by default, you have to activate then before use.
 
 Recipes
 =======
@@ -131,20 +131,19 @@ Recipes
 default
 -------
 
-Install the packages required for _ossim-agent_, then download and build and install ossim-agent, this recipe leave the configuration by default.
+Install the packages required for _ossim-agent_, then download, build and install ossim-agent. This recipe leaves the configuration by default.
 
 configuration
 --------------
 
 Includes `recipe[ossim-agent]`.
 
-This recipe is used to configure `/etc/ossim/agent/config.cfg`, if you don't use it, your _ossim-agent_ will have the default config to _sever & port_, _plugins_, etc.
-
+This recipe is used to configure `/etc/ossim/agent/config.cfg`, if not using it the _ossim-agent_ will have the default values  to _server_, _ips_, _ports_,_plugins_, etc.
 
 Usage
 =====
 
-If you only use `recipe[ossim-agent]`, you will get one funcional _ossim-agent_ with all _configs_ by default. Although, we recommend to use `recipe[ossim-agent::configuration]` to manage the _plugins_ and _ossim server ip_ conenction.
+Apply `recipe[ossim-agent]` to get one funcional _ossim-agent_ with all _configs_ by default. Although it is recommended the use of `recipe[ossim-agent::configuration]` for managing the _plugins_ and _ossim server ip_ conenction.
 
 See __Example__
 
@@ -152,7 +151,7 @@ See __Example__
 Example
 -------
 
-Here you can see how you have to enable any plugin and to change one default, in this case it activates the _ssh_ and _syslog_ plugins, and it changes _ossim-server_ address too.
+Here you can see how to enable any plugin or change the defaults. In this example it activates the _ssh_ and _syslog_ plugins, and it changes the _ossim-server_ address too.
 
 ```json
 {
@@ -200,7 +199,8 @@ License and Authors
 -------------------
 Authors: Fernando Israel García Martínez ( figarciamartinez@gmail.com )
 
-License: _Creative Commons_
+License: Este obra está bajo una [Licencia Creative Commons Atribución 3.0 España][http://creativecommons.org/licenses/by/3.0/es/deed.es].
 
-<a rel="license" href="http://creativecommons.org/licenses/by/3.0/es/deed.es">
-<img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/es/80x15.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/3.0/es/deed.es">Licencia Creative Commons Atribución 3.0 España</a>.
+<img alt="Licencia Creative Commons" 
+    style="border-width:0" 
+    src="http://i.creativecommons.org/l/by/3.0/es/80x15.png" />
