@@ -1,20 +1,20 @@
 ossim-agent Cookbook
 ====================
 
-This cookbook install and config ossim-agent.
+This cookbook installs and configures ossim-agent.
 
 Requirements
 ------------
 
 #### Platform
 
-We tested in ubuntu 12.04 server and debian 7.0.
+We tested it in ubuntu 12.04 server and debian 7.0.
 
-#### Packges
+#### Packages
 
 - `git`: To download the source code.
 - `wget`: To get _GeoLiteCity.dat.gz_ from http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
-- *python libs*: All of them are necessary to _ossim-agent_
+- *python libs*: All of them are necessary for _ossim-agent_
 
 ```
 python-tz
@@ -32,7 +32,7 @@ python-ldap
 Attributes
 ----------
 
-All attributes are described in _attributes/default.rb_ they have default values, and you can to change any. The actual version of _cookbook_ has many posibilities:
+All attributes are described in _attributes/default.rb_. They have default values, and you can to change any. The actual version of _cookbook_ has many posibilities:
 
 _*geolitecity*_: 
 * `node[:geolitecity][:url]`
@@ -62,7 +62,7 @@ _*ossim-agent config.cfg*_:
 
 #### Plugins
 
-Here it is the complete list of plugins that this _cookbook_ managements.
+Here it is the complete list of plugins that this _cookbook_ manages.
 
 * `node[:ossim][:plugins]["apache"]`
 * `node[:ossim][:plugins]["arpwatch"]`
@@ -131,7 +131,7 @@ Recipes
 default
 -------
 
-Install the packages requires for _ossim-agent_, then download and build and install ossim-agent, this recipe leave the configuration by default.
+Install the packages required for _ossim-agent_, then download and build and install ossim-agent, this recipe leave the configuration by default.
 
 configuration
 --------------
@@ -144,7 +144,7 @@ This recipe is used to configure `/etc/ossim/agent/config.cfg`, if you don't use
 Usage
 =====
 
-If you only use `recipe[ossim-agent]`, you will get one funcional _ossim-agent_ with all _configs_ by default. Although, we recoment to use `recipe[ossim-agent::configuration]` to management the _plugins_ and _ossim server ip_ conenction.
+If you only use `recipe[ossim-agent]`, you will get one funcional _ossim-agent_ with all _configs_ by default. Although, we recommend to use `recipe[ossim-agent::configuration]` to manage the _plugins_ and _ossim server ip_ conenction.
 
 See __Example__
 
@@ -152,7 +152,7 @@ See __Example__
 Example
 -------
 
-Here you can to see how you have to enable any plugin and to change one default, in this case it activates the _ssh_ and _syslog_ plugins, and it changes _ossim-server_ address too.
+Here you can see how you have to enable any plugin and to change one default, in this case it activates the _ssh_ and _syslog_ plugins, and it changes _ossim-server_ address too.
 
 ```json
 {
@@ -191,7 +191,7 @@ Contributing
 
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
-3. Write you change
+3. Write your changes
 4. Write tests for your change (if applicable)
 5. Run the tests, ensuring they all pass
 6. Submit a Pull Request using Github
@@ -202,5 +202,5 @@ Authors: Fernando Israel García Martínez ( figarciamartinez@gmail.com )
 
 License: _Creative Commons_
 
-<a rel="license" href="http://creativecommons.org/licenses/by/3.0/es/deed.es"><img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/es/80x15.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/3.0/es/deed.es">Licencia Creative Commons Atribución 3.0 España</a>.
-
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/es/deed.es">
+<img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/es/80x15.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/3.0/es/deed.es">Licencia Creative Commons Atribución 3.0 España</a>.
