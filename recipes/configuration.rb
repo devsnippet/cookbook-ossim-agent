@@ -4,10 +4,9 @@
 # This recipe is used to config ossim-agent
 #
 # TODO:
-#   * Plugin list
-#   * Rest of agent configuration
 #   * ¿ start/stop service script ?
 
+include_recipe "ossim-agent"
 
 template "/etc/ossim/agent/config.cfg" do
     source "config.cfg.erb"

@@ -1,7 +1,7 @@
 name             'ossim-agent'
-maintainer       'Fernando Israel García Martínez'
+maintainer       'Fernando Israel Garcia Martinez'
 maintainer_email 'figarciamartinez@gmail.com'
-license          'All rights reserved'
+license          'Creative Commons'
 description      'Installs/Configures ossim-agent'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.10.0'

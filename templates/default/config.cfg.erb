@@ -51,11 +51,11 @@ verbose = info
 
 # default values, can be overriden in each plugin rule
 [plugin-defaults]
-sensor = 127.0.0.1
-interface = any
+sensor = <%= node[:ossim][:plugin_defauls][:sensor] %>
+interface = <%= node[:ossim][:plugin_defauls][:interface] %>
 date_format = %Y-%m-%d %H:%M:%S ; format, not date itself
-ossim_dsn=mysql:localhost:ossim:root:yoursecretpassword
-tzone=0
+ossim_dsn=<%= node[:ossim][:plugin_defauls][:dsn] %>
+tzone=<%= node[:ossim][:plugin_defauls][:tzone] %>
 ctx=
 
 [watchdog]
@@ -81,7 +81,8 @@ send_events = True
 
 
 [output-idm]
-enable=True
+# enable=True
+enable=False
 ip=127.0.0.1
 port=40002
 

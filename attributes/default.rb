@@ -44,6 +44,17 @@ default[:ossim][:log][:stats] = "#{node[:ossim][:log][:path]}/agent_stats.log"
 
 
 #
+# default values for plugins
+#
+default[:ossim][:plugin_defauls][:sensor] = node[:ipaddress]
+default[:ossim][:plugin_defauls][:interface] = node[:network][:default_interface]
+#
+# FIXME: This is the connect string to ossim database, it has to change when we deploy 
+#        a full ossim infraestructure
+default[:ossim][:plugin_defauls][:dsn] = "mysql:localhost:ossim:root:yoursecretpassword"
+default[:ossim][:plugin_defauls][:tzone] = "Europe/Madrid"
+
+#
 # Plugins
 #
 # detectors
